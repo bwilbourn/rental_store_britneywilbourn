@@ -1,4 +1,4 @@
-def make_purchase(item, quantity):
+def make_purchase(item, quantity, inventory):
     """ (str, float) -> float
     Print name of bounce house(s) and total amount spent. 
 
@@ -14,30 +14,9 @@ def make_purchase(item, quantity):
     460.1
     """
     sales_tax = 1.07
-        l = [ 
-            ['1', 'Princess_Castle', (1250.0)],
-            ['2', 'Blast_Zone', (2000.0)],
-            ['3', 'Jump_Slide', (2500.0)],
-            ['4', 'Sports_Zone', (550.0)],
-            ['5', 'Safari_Bounce', (900.0)]
-        ]
-        replace = l[2]
-    for items in collection:
-        if items == l:
-            do something(choice)
-
-        if item == '1' or item == 'Princess_Castle':
-            return float(650.0 * quantity * sales_tax + replace * .10)
-        elif item == '2' or item == 'Blast_Zone':
-            return float(1000.0 * quantity * sales_tax + replace * .10) 
-        elif item == '3' or item == 'Jump_Slide':
-            return float(1400.0 * quantity * sales_tax + replace * .10)
-        elif item == '4' or item == 'Sports_Zone':
-            return float(280.0 * quantity * sales_tax + replace * .10)
-        elif item == '5' or item == 'Safari_Bounce':
-            return float(430.0 * quantity * sales_tax + replace * .10)
-        else:
-            return ('Sorry, please try again.')
+    for house in inventory:
+        if house[1] == item:
+            return float(650.0 * quantity * sales_tax + house[2] * .10)
 
 # def replacement_cost(replace):
 #     """int -> int
