@@ -1,5 +1,5 @@
 def make_purchase(item, quantity):
-    """ (str, int) -> int
+    """ (str, float) -> float
     Print name of bounce house(s) and total amount spent. 
 
     >>> make_purchase('1', 1)
@@ -14,44 +14,63 @@ def make_purchase(item, quantity):
     460.1
     """
     sales_tax = 1.07
-    if item == '1' or item == 'Princess_Castle':
-        return 650.0 * quantity * sales_tax + replace * .10
-    elif item == '2' or item == 'Blast_Zone':
-        return 1000.0 * quantity * sales_tax + replace * .10 
-    elif item == '3' or item == 'Jump_Slide':
-        return 1400.0 * quantity * sales_tax + replace * .10
-    elif item == '4' or item == 'Sports_Zone':
-        return 280.0 * quantity * sales_tax + replace * .10
-    elif item == '5' or item == 'Safari_Bounce':
-        return 430.0 * quantity * sales_tax + replace * .10
-    else:
-        return ('Sorry, please try again.')
+        l = [ 
+            ['1', 'Princess_Castle', (1250.0)],
+            ['2', 'Blast_Zone', (2000.0)],
+            ['3', 'Jump_Slide', (2500.0)],
+            ['4', 'Sports_Zone', (550.0)],
+            ['5', 'Safari_Bounce', (900.0)]
+        ]
+        replace = l[2]
+    for items in collection:
+        if items == l:
+            do something(choice)
 
-def replacement_cost(replace):
-    """int -> int
-    
-    >>> replacement_cost('Princess_Castle')
-    1250.0
-    >>> replacement_cost('Blast_Zone')
-    2000.0
-    >>> replacement_cost('Jump_Slide')
-    2500.0
-    >>> replacement_cost('Sports_Zone')
-    550.0
-    >>> replacement_cost('Safari_Bounce')
-    900.0
-    """
-    for items in replace:
         if item == '1' or item == 'Princess_Castle':
-            return 1250.0
+            return float(650.0 * quantity * sales_tax + replace * .10)
         elif item == '2' or item == 'Blast_Zone':
-            return 2000.0
+            return float(1000.0 * quantity * sales_tax + replace * .10) 
         elif item == '3' or item == 'Jump_Slide':
-            return 2500.0
+            return float(1400.0 * quantity * sales_tax + replace * .10)
         elif item == '4' or item == 'Sports_Zone':
-            return 550.0
+            return float(280.0 * quantity * sales_tax + replace * .10)
         elif item == '5' or item == 'Safari_Bounce':
-            return 900.0 
+            return float(430.0 * quantity * sales_tax + replace * .10)
+        else:
+            return ('Sorry, please try again.')
+
+# def replacement_cost(replace):
+#     """int -> int
+    
+#     >>> replacement_cost('Princess_Castle')
+#     1250.0
+#     >>> replacement_cost('Blast_Zone')
+#     2000.0
+#     >>> replacement_cost('Jump_Slide')
+#     2500.0
+#     >>> replacement_cost('Sports_Zone')
+#     550.0
+#     >>> replacement_cost('Safari_Bounce')
+#     900.0
+#     """
+#     l = [ 
+#         ['1', 'Princess_Castle', 1250.0]
+#         ['2', 'Blast_Zone', 2000.0]
+#         ['3', 'Jump_Slide', 2500.0]
+#         ['4', 'Sports_Zone', 550.0]
+#         ['5', 'Safari_Bounce', 900.0]
+#     ]
+#     for item in l:
+#         if item == '1' or item == 'Princess_Castle':
+#             return 1250.0
+#         elif item == '2' or item == 'Blast_Zone':
+#             return 2000.0
+#         elif item == '3' or item == 'Jump_Slide':
+#             return 2500.0
+#         elif item == '4' or item == 'Sports_Zone':
+#             return 550.0
+#         elif item == '5' or item == 'Safari_Bounce':
+#             return 900.0 
     
         
 

@@ -4,11 +4,3 @@ Blast_Zone, 50, 1000.0, 2000.0
 Jump_Slide, 50, 1400.0, 2500.0
 Sports_Zone, 50, 280.0, 550.0
 Safari_Bounce, 50, 430.0, 900.0
-
-
-
- \t1. Princess_Castle $1250.0
-    \t2. Blast_Zone $2000.0
-    \t3. Jump_Slide $2500.0
-    \t4. Sports_Zone $550.0
-    \t5. Safari_Bounce $900.0

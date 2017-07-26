@@ -1,4 +1,4 @@
-import core
+import core, disk
 
 def main():
     print("Welcome to Brits Bounce Rentals 4 You!")
