@@ -1,22 +1,33 @@
-def make_purchase(item, quantity, inventory):
+def make_purchase(decision, quantity, inventory):
     """ (str, float) -> float
-    Print name of bounce house(s) and total amount spent. 
-
-    >>> make_purchase('1', 1)
-    695.5
-    >>> make_purchase('2', 1)
-    1070.0
-    >>> make_purchase('3', 1)
-    1498.0
-    >>> make_purchase('4', 1)
-    299.6
-    >>> make_purchase('5', 1)
-    460.1
+    Print total amount spent. 
     """
     sales_tax = 1.07
     for house in inventory:
-        if house[1] == item:
-            return float(650.0 * quantity * sales_tax + house[2] * .10)
+        if house[0] == decision or house[1] == decision:
+            return house[3] * quantity * sales_tax + house[4] * .10
+    return 'Invalid'
+
+def rental_price(price):
+    """(int) -> string"""
+    return 'Your rent total: ${:.2f}'.format(float(price))
+
+
+
+# >>> make_purchase('1', 1, 'Princess_Castle')
+# 695.5
+# >>> make_purchase('2', 1, 'Blast_Zone')
+# 1070.0
+# >>> make_purchase('3', 1, 'Jump_Slide')
+# 1498.0
+# >>> make_purchase('4', 1, 'Sports_Zone')
+# 299.6
+# >>> make_purchase('5', 1, 'Safari_Bounce')
+# # 460.1
+
+# def return_rental():
+
+
 
 # def replacement_cost(replace):
 #     """int -> int
@@ -52,11 +63,3 @@ def make_purchase(item, quantity, inventory):
 #             return 900.0 
     
         
-
-def rental_price(price):
-    """(int) -> string"""
-    if price == str(price):
-        return 'Invalid choice.'
-    return 'Your rent total: ${:.2f}'.format(float(price))
-
-# def return_rental():

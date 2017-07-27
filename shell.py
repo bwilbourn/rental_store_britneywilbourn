@@ -1,6 +1,8 @@
 import core, disk
 
 def main():
+    inventory = disk.open_inventory()
+    # print(inventory)
     print("Welcome to Brits Bounce Rentals 4 You!")
     message = """
     Hello! Which Bounce House would you like to rent today?
@@ -18,8 +20,8 @@ def main():
             print('Goodbye!')
             break
         quantity = int(input('How many would you like? ').strip())
-        price = core.make_purchase(decision, quantity)
-        print(core.rental_price(price))
+        price = core.make_purchase(decision, quantity, inventory)
+        print(core.rental_price(str(price)))
         break
     print('Thank you have a nice day!')
 
