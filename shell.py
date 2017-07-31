@@ -28,8 +28,10 @@ def main():
         break
     print('Thank you have a nice day!')
 
-    if core.take_away(decision, quantity, inventory):
+    if core.make_purchase(decision, quantity, inventory):
         print('Successful sale!')
+    if core.take_away(decision, quantity, inventory):
+        print('Success!')
 
 
 if __name__ == '__main__':

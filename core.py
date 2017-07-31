@@ -13,11 +13,22 @@ def rental_price(price):
     return 'Your rent total: ${:.2f}'.format(float(price))
 
 
-def return_rental():
-    """ float -> (str, float)
-    return item into inventory.
-    """
-    for house in inventory:
+
+def take_away(decision, quantity, inventory):
+    str_l = ['code, house, quantity, rent, replace']
+    for item in inventory:
+        if item[0] == decision:
+            item[2] -= item[2]
+        str_l.append('{}, {}, {}, {}, {}'.format(int(item[0]), item[1], int(item[2]), float(item[3]), float(item[4])))
+        message = '\n'.join(str_l)
+    return True 
+
+
+# def return_rental():
+#     """ float -> (str, float)
+#     return item into inventory.
+#     """
+#     for house in inventory:
 
 
 # In shell I put "or will you be returning a rental?" at 

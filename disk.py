@@ -7,4 +7,3 @@ def open_inventory():
         split_string = line.strip().split(', ')
         inventory.append([split_string[0], split_string[1], split_string[2], float(split_string[3]), float(split_string[4])])
     return inventory
-
