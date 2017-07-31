@@ -2,6 +2,7 @@ import core, disk
 
 def main():
     inventory = disk.open_inventory()
+    # new_line = disk.close_inventory()
     # print(inventory)
     print("Welcome to Brits Bounce Rentals 4 You!")
     message = """

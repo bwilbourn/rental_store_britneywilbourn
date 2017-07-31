@@ -18,10 +18,10 @@ def take_away(decision, quantity, inventory):
     str_l = ['code, house, quantity, rent, replace']
     for item in inventory:
         if item[0] == decision:
-            item[2] -= item[2]
+            item[2] = int(item[2]) - quantity
         str_l.append('{}, {}, {}, {}, {}'.format(int(item[0]), item[1], int(item[2]), float(item[3]), float(item[4])))
         message = '\n'.join(str_l)
-    return True 
+    return True
 
 
 # def return_rental():
