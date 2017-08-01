@@ -22,7 +22,7 @@ def take_away(decision, quantity, inventory):
         msg = '\n'.join(str_l)
     return msg
 
-def make_history(decision, price, inventory):
+def make_history(decision, quantity, price):
     if decision == '1' or decision == 'Princess_Castle':
         return price
     elif decision == '2' or decision == 'Blast_Zone':
@@ -34,8 +34,7 @@ def make_history(decision, price, inventory):
     elif decision == '5' or decision == 'Safari_Bounce':
         return price
     else:
-        log = '{}, {}, {}\n'.format(decision, price, inventory)
-        return log
+        return 'Invalid.'
 
 
 

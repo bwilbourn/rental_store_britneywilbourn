@@ -1,0 +1,3 @@
+decision, quantity, log
+3, 2, 3246.0
+

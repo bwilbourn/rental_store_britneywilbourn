@@ -1,6 +1,6 @@
 code, house, quantity, rent, replace
-1, Princess_Castle, 43, 650.0, 1250.0
+1, Princess_Castle, 37, 650.0, 1250.0
 2, Blast_Zone, 47, 1000.0, 2000.0
-3, Jump_Slide, 48, 1400.0, 2500.0
+3, Jump_Slide, 46, 1400.0, 2500.0
 4, Sports_Zone, 48, 280.0, 550.0
 5, Safari_Bounce, 48, 430.0, 900.0

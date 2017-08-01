@@ -2,7 +2,6 @@ import core, disk
 
 def main():
     inventory = disk.open_inventory()
-    # new_line = disk.close_inventory()
     # print(inventory)
     print("Welcome to Brits Bounce Rentals 4 You!")
     message = """
@@ -36,9 +35,10 @@ def main():
         disk.change_inventory(msg)
         print('Success!')
     # write message for history
-        core.make_history(decision, price, inventory)
+        log = core.make_history(decision, quantity, price)
     # write message to history
-        disk.write_log(log)
+        disk.write_log(log, decision, quantity)
+        print('That is all!')
 
 if __name__ == '__main__':
     main()
