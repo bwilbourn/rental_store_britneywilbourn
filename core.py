@@ -22,6 +22,19 @@ def take_away(decision, quantity, inventory):
         msg = '\n'.join(str_l)
     return msg
 
+def return_rental(choice, quantity, inventory):
+    """ (int) -> float
+    return total rented item to inventory. 
+    """
+    str_l = ['code, house, quantity, rent, replace']
+    for item in inventory:
+        if item[0] == choice:
+            item[2] = int(item[2]) + quantity
+        str_l.append('{}, {}, {}, {}, {}'.format(int(item[0]), item[1], int(item[2]), float(item[3]), float(item[4])))
+        inven = '\n'.join(str_l)
+    return inven
+   
+
 def make_history(decision, quantity, price):
     if decision == '1' or decision == 'Princess_Castle':
         return price
@@ -36,16 +49,6 @@ def make_history(decision, quantity, price):
     else:
         return 'Invalid.'
 
-
-
-
-
-
-# def return_rental():
-#     """ float -> (str, float)
-#     return item into inventory.
-#     """
-#     for house in inventory:
 
 
 # In shell I put "or will you be returning a rental?" at 
