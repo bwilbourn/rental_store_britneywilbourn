@@ -13,15 +13,33 @@ def rental_price(price):
     return 'Your rent total: ${:.2f}'.format(float(price))
 
 
-
 def take_away(decision, quantity, inventory):
     str_l = ['code, house, quantity, rent, replace']
     for item in inventory:
         if item[0] == decision:
             item[2] = int(item[2]) - quantity
         str_l.append('{}, {}, {}, {}, {}'.format(int(item[0]), item[1], int(item[2]), float(item[3]), float(item[4])))
-        message = '\n'.join(str_l)
-    return True
+        msg = '\n'.join(str_l)
+    return msg
+
+def make_history(decision, price, inventory):
+    if decision == '1' or decision == 'Princess_Castle':
+        return price
+    elif decision == '2' or decision == 'Blast_Zone':
+        return price
+    elif decision == '3' or decision == 'Jump_Slide':
+        return price
+    elif decision == '4' or decision == 'Sports_Zone':
+        return price
+    elif decision == '5' or decision == 'Safari_Bounce':
+        return price
+    else:
+        log = '{}, {}, {}\n'.format(decision, price, inventory)
+        return log
+
+
+
+
 
 
 # def return_rental():

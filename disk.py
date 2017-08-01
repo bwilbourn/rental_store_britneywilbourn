@@ -8,10 +8,18 @@ def open_inventory():
         inventory.append([split_string[0], split_string[1], split_string[2], float(split_string[3]), float(split_string[4])])
     return inventory
 
+def change_inventory(msg):
+    with open('inventory.txt', 'w') as file:
+        file.write(msg)
+    return True
 
-# def close_inventory():
-#     with open('history.txr', 'w') as file:
-#         new_line = ('{}, {}, {}, {}, {}'.format(int(item[0]), item[1], int(item[2]), float(item[3]), float(item[4])))
-#         for item in new_line:
-#             str_l = new_line.strip()
-#             file.write(str_l)
+# def open_log():
+#     log = []
+#     with open('')
+
+
+def write_log(log):
+    with open('history.txt', 'w') as file:
+        file.write(log)
+    return True
+

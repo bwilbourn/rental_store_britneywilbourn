@@ -31,9 +31,14 @@ def main():
 
     if core.make_purchase(decision, quantity, inventory):
         print('Successful sale!')
-    if core.take_away(decision, quantity, inventory):
+    # if core.take_away(decision, quantity, inventory):
+        msg = core.take_away(decision, quantity, inventory)
+        disk.change_inventory(msg)
         print('Success!')
-
+    # write message for history
+        core.make_history(decision, price, inventory)
+    # write message to history
+        disk.write_log(log)
 
 if __name__ == '__main__':
     main()
