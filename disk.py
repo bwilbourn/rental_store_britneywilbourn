@@ -19,13 +19,3 @@ def write_log(log, decision, quantity):
     with open('history.txt', 'a') as file:
         file.write(msg)
 
-# def open_log():
-#     log = []
-#     with open('history.txt', 'r') as file:
-#         file.readline()
-#         items = file.readlines()
-#     for item in items:
-#         string_split = line.strip().split(', ')
-#         log.append([split_string[0], split_string[1], float(split_string[2])])
-#     return log
-

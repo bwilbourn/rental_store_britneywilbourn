@@ -46,9 +46,7 @@ def make_history(decision, quantity, price):
         return price
     elif decision == '5' or decision == 'Safari_Bounce':
         return price
-    # else:
-    #     return price
-    
+
 
 
         

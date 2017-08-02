@@ -15,3 +15,7 @@ return, 3, None
 3, 9, 13732.0
 2, 5, 5550.0
 return, 2, None
+return, 1, None
+1, 1, 820.5
+1, 1, 820.5
+return, 2, None

@@ -2,18 +2,22 @@ import core, disk
 
 def main():
     inventory = disk.open_inventory()
-    # print(inventory)
-    print("Welcome to Brits Bounce Rentals 4 You!")
+    print("Welcome to Brits Bounce Rentals!")
     message = """
-    Hello! Which Bounce House would you like to rent today or will you be returning a rental?
-    \t **Price shown is for 3 days**
-    \t *** .10 deposit of replacement value is added to total, 
-    \t     is returned to customer if rental is as rented. ***
+    Hello! Which Bounce House would you like to rent today or would you like to return a rental?\n
+    \t*Price shown is for 3 days*\n
+    \t**.10 deposit of replacement value is added to total, 
+    \twill be returned to customer if rental is as rented.**\n
     \t1. Princess_Castle $650.0
+    \t-replacement cost: $1250.0\n
     \t2. Blast_Zone $1000.0
+    \t-replacement cost: $2000.0\n
     \t3. Jump_Slide $1400.0
+    \t-replacement cost: $2500.0\n
     \t4. Sports_Zone $280.0
+    \t-replacement cost: $550.0\n
     \t5. Safari_Bounce $430.0
+    \t-replacement cost: $900.0\n
     \t "return" to return rental.
     \t Press q to quit
     """
@@ -24,7 +28,7 @@ def main():
         \t2. Blast_Zone $1000.0
         \t3. Jump_Slide $1400.0
         \t4. Sports_Zone $280.0
-        \t5. Safari_Bounce $430.0''')
+        \t5. Safari_Bounce $430.0\n''')
         quantity = int(input('How many would you like to return? ').strip())
         price = core.make_purchase(decision, quantity, inventory)
         msg = core.return_rental(choice, quantity, inventory)
@@ -34,7 +38,6 @@ def main():
         log = core.make_history(decision, quantity, price)
         # write message to history
         disk.write_log(log, decision, quantity)
-        print('Thank ya!')
         exit()
 
     elif decision.lower().strip() == 'q':
@@ -44,19 +47,15 @@ def main():
     price = core.make_purchase(decision, quantity, inventory)
     print(core.rental_price(price))
     print('Thank you have a nice day!')
-    # exit()
 
     if core.make_purchase(decision, quantity, inventory):
-        print('Successful sale!')
-
         msg = core.take_away(decision, quantity, inventory)
         disk.change_inventory(msg)
-        print('Success!')
         # write message for history
         log = core.make_history(decision, quantity, price)
         # write message to history
         disk.write_log(log, decision, quantity)
-        print('That is all!')
+        print('Successful sale.')
 
 
 if __name__ == '__main__':
