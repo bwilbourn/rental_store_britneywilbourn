@@ -20,6 +20,13 @@ def test_take_away():
     ]
     assert core.take_away('Princess_Castle', 650.0, l) == True
 
+# def test_return_rental():
+#     l = [
+#         ['1', 'Princess_Castle', 50, 650.0, 1250.0],
+#         ['2', 'Blast_Zone', 50, 1000.0, 2000.0],
+#         ['3', 'Jump_Slide', 50, 1400.0, 2500.0]
+#     ]
+#     assert core.return_rental('Princess_Castle', 650.0, l) == True
 
 # def test_message_log():
 #     assert core.message_log('1', 'Princess_Castle', 50, 650.0, 1250.0) == '1, Princess_Castle, 50, 650.0, 1250.0\n'

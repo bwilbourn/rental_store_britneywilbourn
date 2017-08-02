@@ -18,29 +18,33 @@ def main():
     \t Press q to quit
     """
     decision = input(message)
-    while True:
-        if decision == 'return':
-            choice = input('''Which rental are you returning?\n
-            \t1. Princess_Castle $650.0
-            \t2. Blast_Zone $1000.0
-            \t3. Jump_Slide $1400.0
-            \t4. Sports_Zone $280.0
-            \t5. Safari_Bounce $430.0''')
-            quantity = int(input('How many would you like to return? ').strip())
-            msg = core.return_rental(choice, quantity, inventory)
-            disk.change_inventory(msg)
-            print('Returned! Have a great day!')
-            exit()
-
-    while True:
-        if decision.lower().strip() == 'q':
-            print('Goodbye!')
-            break
-        quantity = int(input('How many would you like? ').strip())
+    if decision == 'return':
+        choice = input('''Which rental are you returning?\n
+        \t1. Princess_Castle $650.0
+        \t2. Blast_Zone $1000.0
+        \t3. Jump_Slide $1400.0
+        \t4. Sports_Zone $280.0
+        \t5. Safari_Bounce $430.0''')
+        quantity = int(input('How many would you like to return? ').strip())
         price = core.make_purchase(decision, quantity, inventory)
-        print(core.rental_price(price))
-        break
-        print('Thank you have a nice day!')
+        msg = core.return_rental(choice, quantity, inventory)
+        disk.change_inventory(msg)
+        print('Returned! Have a great day!')
+        # write message for history
+        log = core.make_history(decision, quantity, price)
+        # write message to history
+        disk.write_log(log, decision, quantity)
+        print('Thank ya!')
+        exit()
+
+    elif decision.lower().strip() == 'q':
+        print('Goodbye!')
+        exit()
+    quantity = int(input('How many would you like? ').strip())
+    price = core.make_purchase(decision, quantity, inventory)
+    print(core.rental_price(price))
+    print('Thank you have a nice day!')
+    # exit()
 
     if core.make_purchase(decision, quantity, inventory):
         print('Successful sale!')

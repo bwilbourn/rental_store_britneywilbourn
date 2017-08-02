@@ -46,15 +46,9 @@ def make_history(decision, quantity, price):
         return price
     elif decision == '5' or decision == 'Safari_Bounce':
         return price
-    else:
-        return 'Invalid.'
-
-
-
-# In shell I put "or will you be returning a rental?" at 
-# the end of my intro message and
-# "\t "return" to return rental." in the "\t" message.
-
+    # else:
+    #     return price
+    
 
 
         
