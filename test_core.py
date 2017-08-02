@@ -11,24 +11,3 @@ def test_make_purchase():
 
 def test_rental_price():
     assert core.rental_price(1) == 'Your rent total: $1.00'
-
-# def test_take_away():
-#     l = [
-#         ['1', 'Princess_Castle', 50, 650.0, 1250.0],
-#         ['2', 'Blast_Zone', 50, 1000.0, 2000.0],
-#         ['3', 'Jump_Slide', 50, 1400.0, 2500.0]
-#     ]
-#     assert core.take_away('Princess_Castle', 650.0, l) == True
-#     assert core.take_away('1', 'Princess_Castle', 50, 650.0, 1250.0) == '1, Princess_Castle, 50, 650.0, 1250.0\n'
-#     assert core.take_away('2', 'Blast_Zone', 50, 1000.0, 2000.0) == '2, Blast_Zone, 50, 1000.0, 2000.0\n'
-
-
-# def test_return_rental():
-#     l = [
-#         ['1', 'Princess_Castle', 50, 650.0, 1250.0],
-#         ['2', 'Blast_Zone', 50, 1000.0, 2000.0],
-#         ['3', 'Jump_Slide', 50, 1400.0, 2500.0]
-#     ]
-#     assert core.return_rental('Princess_Castle', 650.0, l) == True
-
-# def test_make_history():
