@@ -25,7 +25,7 @@ def deposit_price(deposit):
     return 'Your deposit total is: ${:.2f}'.format(float(deposit))
 
 
-def make_history(inventory, decision, quantity, price, deposit):
+def make_history(inventory, decision):
     for house in inventory:
         if decision == house[0] or decision == house[1]:
             return house[3]
@@ -68,10 +68,3 @@ def return_rental(return_decision, return_quantity, inventory):
             int(house[2]), float(house[3]), float(house[4])))
         inven = '\n'.join(str_l)
     return inven
-
-
-# def revenue(inventory):
-#     price = 0
-#     for house in inventory:
-#         price += house[]
-#     return price

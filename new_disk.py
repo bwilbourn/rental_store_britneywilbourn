@@ -32,3 +32,14 @@ def write_return_history(return_decision, return_quantity, return_deposit,
                                     return_deposit, return_total)
     with open('new_history.txt', 'a') as file:
         file.write(log)
+
+
+def revenue():
+    rev = []
+    with open('new_history.txt', 'r') as file:
+        file.readline()
+        lines = file.readlines()
+        for line in lines:
+            split_string = line.strip().split(', ')
+            rev.append(float(split_string[2]))
+        return sum(rev)

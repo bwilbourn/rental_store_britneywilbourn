@@ -18,8 +18,7 @@ def main():
         print('We have a 10% deposit that will be returned later.')
         deposit = new_core.get_deposit_cost(inventory)
         # writes message for history
-        total = new_core.make_history(inventory, decision, quantity, price,
-                                      deposit)
+        total = new_core.make_history(inventory, decision)
         # writes message to history
         new_disk.write_history(decision, quantity, price, deposit, total)
 
@@ -62,6 +61,11 @@ def main():
         new_disk.change_inventory(message)
         print(new_core.get_return_deposit_cost(return_deposit))
         print('Thank you for your business!')
+        exit()
+
+    elif yes_no == 'rev':
+        print(new_disk.revenue())
+        print('is your total revenue.')
         exit()
 
     elif yes_no == 'q' or yes_no == 'Q':
